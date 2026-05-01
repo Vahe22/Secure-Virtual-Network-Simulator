@@ -1,0 +1,13 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="MyNetworkVisualizer.NetworkManager"
+        Title="Network Manager" Height="250" Width="400" Background="#1E1E1E">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Ellipse x:Name="StatusLed" Width="20" Height="20" Fill="Red" Margin="10"/>
+            <TextBlock x:Name="StatusLabel" Text="Ցանցը Անջատված է" Foreground="White" HorizontalAlignment="Center" Margin="10"/>
+            <ToggleButton x:Name="NetworkToggle" Content="START NETWORK" Width="180" Height="50"
+                          Checked="NetworkToggle_Checked" Unchecked="NetworkToggle_Unchecked"/>
+        </StackPanel>
+    </Grid>
+</Window>

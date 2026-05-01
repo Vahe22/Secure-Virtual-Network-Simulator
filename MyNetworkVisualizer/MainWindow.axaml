@@ -1,0 +1,86 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="MyNetworkVisualizer.MainWindow"
+        Title="CyberShield Network Monitor" Width="1200" Height="750"
+        Background="#0D1117" WindowStartupLocation="CenterScreen">
+
+    <Grid ColumnDefinitions="280, *, 280" RowDefinitions="Auto, *, Auto" Margin="15">
+        
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="0,0,0,15">
+            <TextBlock Text="SECURE END-TO-END NETWORK SIMULATOR" FontSize="26" FontWeight="Bold" Foreground="#58A6FF" HorizontalAlignment="Center"/>
+            <TextBlock Text="AES-256-GCM Encryption &amp; Shannon Entropy Live Analysis" FontSize="13" Foreground="#8B949E" HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Spacing="15" Margin="0,20,10,0">
+            <TextBlock Text="SENDER (nsA)" Foreground="#58A6FF" FontSize="14" FontWeight="Bold"/>
+            <Border Background="#161B22" Padding="12" CornerRadius="10" BorderBrush="#30363D" BorderThickness="1">
+                <StackPanel Spacing="10">
+                    <TextBlock Text="Input Message:" Foreground="#8B949E" FontSize="11"/>
+                    <TextBox Name="MessageInput" Watermark="Type secret message..." Height="80" TextWrapping="Wrap" AcceptsReturn="True" Background="#0D1117" Foreground="White" BorderBrush="#484F58"/>
+                    <Button Name="SendBtn" Content="📤 SEND SECURELY" Click="SendBtn_Click" Width="220" Height="42" Background="#238636" Foreground="White" HorizontalContentAlignment="Center" CornerRadius="5"/>
+                </StackPanel>
+            </Border>
+            <Separator Opacity="0.1"/>
+            <Button Name="StartBtn" Content="🚀 START SYSTEM" Click="StartBtn_Click" Width="230" Height="45" Background="#1F6FEB" Foreground="White" HorizontalContentAlignment="Center"/>
+            <Button Name="StopBtn" Content="🛑 STOP SYSTEM" Click="StopBtn_Click" Width="230" Height="45" Background="#DA3633" Foreground="White" HorizontalContentAlignment="Center"/>
+            <TextBlock Text="SYSTEM LOGS" Foreground="#8B949E" FontSize="11" Margin="0,10,0,0"/>
+            <Border Background="#010409" CornerRadius="5" Height="180" BorderBrush="#30363D" BorderThickness="1">
+                <ScrollViewer Name="LogScroller">
+                    <TextBlock x:Name="LogText" FontSize="10" Foreground="#3FB950" TextWrapping="Wrap" Margin="8" FontFamily="Monospace"/>
+                </ScrollViewer>
+            </Border>
+        </StackPanel>
+
+        <Viewbox Grid.Row="1" Grid.Column="1" Stretch="Uniform">
+            <Canvas Width="900" Height="300">
+                <Line StartPoint="100,150" EndPoint="800,150" Stroke="#30363D" StrokeThickness="8" StrokeLineCap="Round"/>
+                <Line x:Name="MainLink" StartPoint="100,150" EndPoint="800,150" Stroke="Gray" StrokeThickness="4" StrokeLineCap="Round"/>
+                <Border x:Name="Packet" Width="22" Height="22" CornerRadius="11" Background="White" Opacity="0" BoxShadow="0 0 15 5 Cyan">
+                    <Border.RenderTransform> <TranslateTransform X="0" Y="0"/> </Border.RenderTransform>
+                </Border>
+                <Border Canvas.Left="50" Canvas.Top="110" Width="100" Height="80" Background="#161B22" BorderBrush="#30363D" BorderThickness="2" CornerRadius="12">
+                    <TextBlock Text="nsA" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+                </Border>
+                <Border Canvas.Left="280" Canvas.Top="105" Width="120" Height="90" Background="#161B22" BorderBrush="#1F6FEB" BorderThickness="2" CornerRadius="12">
+                    <TextBlock x:Name="LockD1" Text="🔓" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border Canvas.Left="490" Canvas.Top="105" Width="120" Height="90" Background="#161B22" BorderBrush="#1F6FEB" BorderThickness="2" CornerRadius="12">
+                    <TextBlock x:Name="LockD2" Text="🔓" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border Canvas.Left="750" Canvas.Top="110" Width="100" Height="80" Background="#161B22" BorderBrush="#30363D" BorderThickness="2" CornerRadius="12">
+                    <TextBlock Text="nsB" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+                </Border>
+            </Canvas>
+        </Viewbox>
+
+        <StackPanel Grid.Row="1" Grid.Column="2" Spacing="15" Margin="10,20,0,0">
+            <TextBlock Text="RECEIVER (nsB)" Foreground="#58A6FF" FontSize="14" FontWeight="Bold"/>
+            <Border Background="#161B22" Padding="12" CornerRadius="10" BorderBrush="#30363D" BorderThickness="1">
+                <StackPanel Spacing="8">
+                    <TextBlock Text="DECRYPTED MESSAGE:" Foreground="#8B949E" FontSize="10"/>
+                    <TextBlock x:Name="DecryptedOutput" Text="Waiting..." Foreground="#3FB950" FontWeight="Bold" FontSize="14" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+            <Border Background="#161B22" Padding="12" CornerRadius="10" BorderBrush="#30363D" BorderThickness="1">
+                <StackPanel Spacing="10">
+                    <TextBlock Text="SHANNON ENTROPY:" Foreground="#8B949E" FontSize="10"/>
+                    <TextBlock x:Name="EntropyValue" Text="0.00" Foreground="#58A6FF" FontSize="34" FontWeight="Light" HorizontalAlignment="Center"/>
+                    <ProgressBar x:Name="EntropyBar" Minimum="0" Maximum="8" Value="0" Height="8" Foreground="#58A6FF" Background="#0D1117" CornerRadius="4"/>
+                </StackPanel>
+            </Border>
+            <TextBlock Text="RAW CIPHERTEXT (HEX):" Foreground="#8B949E" FontSize="10" Margin="0,10,0,0"/>
+            <Border Background="#010409" CornerRadius="5" Height="180" BorderBrush="#30363D" BorderThickness="1">
+                <ScrollViewer Name="CipherScroller">
+                    <TextBlock x:Name="CipherOutput" FontSize="9" Foreground="#8B949E" TextWrapping="Wrap" Margin="8" FontFamily="Monospace"/>
+                </ScrollViewer>
+            </Border>
+        </StackPanel>
+
+        <Border Grid.Row="2" Grid.ColumnSpan="3" Background="#161B22" CornerRadius="10" Padding="15" Margin="0,10,0,0" BorderBrush="#30363D" BorderThickness="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="25">
+                <Ellipse x:Name="StatusDot" Width="12" Height="12" Fill="Gray"/>
+                <TextBlock x:Name="StatusLabel" Text="SYSTEM READY - STANDBY" Foreground="#C9D1D9" FontSize="15" FontWeight="SemiBold"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

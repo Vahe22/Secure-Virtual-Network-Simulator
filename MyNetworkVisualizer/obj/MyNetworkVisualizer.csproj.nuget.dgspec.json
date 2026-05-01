@@ -1,0 +1,97 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/kali/Desktop/MyProj/MyNetworkVisualizer/MyNetworkVisualizer.csproj": {}
+  },
+  "projects": {
+    "/home/kali/Desktop/MyProj/MyNetworkVisualizer/MyNetworkVisualizer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/kali/Desktop/MyProj/MyNetworkVisualizer/MyNetworkVisualizer.csproj",
+        "projectName": "MyNetworkVisualizer",
+        "projectPath": "/home/kali/Desktop/MyProj/MyNetworkVisualizer/MyNetworkVisualizer.csproj",
+        "packagesPath": "/home/kali/.nuget/packages/",
+        "outputPath": "/home/kali/Desktop/MyProj/MyNetworkVisualizer/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/kali/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Avalonia": {
+              "target": "Package",
+              "version": "[11.0.10, )"
+            },
+            "Avalonia.Desktop": {
+              "target": "Package",
+              "version": "[11.0.10, )"
+            },
+            "Avalonia.Diagnostics": {
+              "target": "Package",
+              "version": "[11.0.10, )"
+            },
+            "Avalonia.Fonts.Inter": {
+              "target": "Package",
+              "version": "[11.0.10, )"
+            },
+            "Avalonia.Themes.Fluent": {
+              "target": "Package",
+              "version": "[11.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.8, 6.0.8]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[6.0.8, 6.0.8]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.8, 6.0.8]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.400/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

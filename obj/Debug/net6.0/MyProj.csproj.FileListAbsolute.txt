@@ -1,0 +1,5 @@
+/home/kali/Desktop/MyProj/obj/Debug/net6.0/MyProj.csproj.AssemblyReference.cache
+/home/kali/Desktop/MyProj/obj/Debug/net6.0/MyProj.GeneratedMSBuildEditorConfig.editorconfig
+/home/kali/Desktop/MyProj/obj/Debug/net6.0/MyProj.AssemblyInfoInputs.cache
+/home/kali/Desktop/MyProj/obj/Debug/net6.0/MyProj.AssemblyInfo.cs
+/home/kali/Desktop/MyProj/obj/Debug/net6.0/MyProj.csproj.CoreCompileInputs.cache
