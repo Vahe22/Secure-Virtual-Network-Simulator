@@ -1,2 +1,3 @@
-Run ->dotnet clean ->  donet build -> donet run 
-We made the process of calling new.sh in ~ and stop.sh automated and with single command in CMD we can open 2 interfaces 
+At first change your direction to MyNetworkVisualizer then 
+Run -> dotnet clean ->  donet build -> donet run 
+
