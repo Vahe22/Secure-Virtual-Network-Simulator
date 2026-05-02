@@ -18,9 +18,14 @@ namespace MyNetworkVisualizer
         private Process? _d1Process, _d2Process, _receiverProcess;
 
         private static readonly string UserHome = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-        private readonly string _backendPath = Path.Combine(UserHome, "Desktop/MyProj/C_backend");
-        private readonly string _startScript = Path.Combine(UserHome, "new.sh");
-        private readonly string _stopScript = Path.Combine(UserHome, "stop.sh");
+
+        // This points to: /home/user/Desktop/MyProj/C_backend
+        private readonly string _backendPath = Path.Combine(UserHome, "Desktop", "MyProj", "C_backend");
+
+        // This goes to MyProj (one level back from C_backend) to find the scripts
+        // Path: /home/user/Desktop/MyProj/new.sh
+        private readonly string _startScript = Path.Combine(UserHome, "Desktop", "MyProj", "new.sh");
+        private readonly string _stopScript = Path.Combine(UserHome, "Desktop", "MyProj", "stop.sh");
 
         public MainWindow()
         {

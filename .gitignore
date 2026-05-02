@@ -1,0 +1,16 @@
+# C# Build Artifacts
+bin/
+obj/
+
+# C Build Artifacts
+C_Backend/dev1_bin
+C_Backend/dev2_bin
+C_Backend/provisioner
+C_Backend/sender
+C_Backend/receiver
+*.o
+
+# Security Keys
+C_Backend/dev1_keys/
+C_Backend/dev2_keys/
+*.pem

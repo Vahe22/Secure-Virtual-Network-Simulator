@@ -12,8 +12,8 @@ namespace MyNetworkVisualizer
     public partial class NetworkManager : Window
     {
         public static event Action<bool>? NetworkStatusChanged;
-        private const string StartScript = "/home/kali/new.sh";
-        private const string StopScript = "/home/kali/stop.sh";
+        private const string StartScript = "../new.sh";
+        private const string StopScript = "../stop.sh";
 
         public NetworkManager()
         {
